@@ -1,21 +1,50 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import n_logo from './Nebraska_N_RGB.svg';
 import './App.css';
+import styled from 'styled-components';
+var zxcvbn = require('zxcvbn');
+
+
+const StyledInput = styled.input`
+  display: block;
+  margin: 20px 0px;
+  border: 1px solid lightblue;
+`;
+
+function useInput(defaultValue) {
+  const [value, setValue] = useState(defaultValue);
+  function onChange(e) {
+    setValue(e.target.value);
+  }
+  return {
+    value,
+    onChange,
+  };
+}
 
 function App() {
+  const inputProps = useInput();
   return (
-    <div className="App">
+    <div className="PwdGen">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={n_logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <StyledInput 
+          {...inputProps}
+          placeholder="Type in here"
+        />
+        </p>
+        <span>Value: {inputProps.value} </span>
+        <p>
+          <span>Result:</span>
+          <span></span>
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
+          href="/"
           rel="noopener noreferrer"
         >
-          Learn React
+          Reload
         </a>
       </header>
     </div>
