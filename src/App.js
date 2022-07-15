@@ -29,29 +29,45 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      password: '',
+      tpass: '',
     }
   }
 
   render() {
-    const { password } = this.state;
+    const { tpass } = this.state;
+    const {pw_length } = this.state;
+    const { upfirst } = this.state;
+  
     return (
       <div className="App">
         <div className="PwdGen">
           <header className="App-header">
             <img src={n_logo} className="App-logo" alt="logo" />
           </header>
-          <p>
-            <RandPwd />
-          </p>
+          <table>
+            <tr>
+              <td>
+                <label>Length: </label>
+              </td>
+              <td>
+                <input type='text' onChange={e => this.setState({ pw_length: e.target.value })}/>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Upcase First: </label></td>
+              <td><input type='checkbox' onChange={e => this.setState({ upfirst: e.target.value })}></input></td>
+            </tr>
+          </table>
+
+          <RandPwd />
+
           <p>
             <label>Test a password: </label>
-            <input autoComplete="off" type="password" placeholder="Type here..." onChange={e => this.setState({ password: e.target.value })}/>
+            <input autoComplete="off" type="text" placeholder="Type here..." onChange={e => this.setState({ tpass: e.target.value })}/>
           </p>
-          <span>Value: {password} </span>
 
           <div className="meter">
-            <PwdMeter password={password} />
+            <PwdMeter password={tpass} />
           </div>
         </div>
       </div>
