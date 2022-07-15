@@ -15,3 +15,8 @@ code {
 img.logo {
   scale: 0.25;
 }
+
+.PwdGen {
+  background-color: dimgrey;
+  height: 100vh;
+}

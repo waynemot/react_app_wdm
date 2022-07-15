@@ -5,16 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-function useInput(defaultValue) {
-  const [value, setValue] = useState(defaultValue);
-  function onChange(e) {
-    setValue(e.target.value);
-  }
-  return {
-    value,
-    onChange,
-  };
-}
+//function useInput(defaultValue) {
+//  const [value, setValue] = useState(defaultValue);
+//  function onChange(e) {
+//    setValue(e.target.value);
+//  }
+//  return {
+//    value,
+//    onChange,
+//  };
+//}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
