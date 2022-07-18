@@ -36,7 +36,9 @@ class App extends Component {
   render() {
     const { tpass } = this.state;
     const {pw_length } = this.state;
-    const { upfirst } = this.state;
+    const { up_first } = this.state;
+    const { spec_char } = this.state;
+    const { add_num } = this.state;
   
     return (
       <div className="App">
@@ -55,7 +57,19 @@ class App extends Component {
             </tr>
             <tr>
               <td><label>Upcase First: </label></td>
-              <td><input type='checkbox' onChange={e => this.setState({ upfirst: e.target.value })}></input></td>
+              <td><input type='checkbox' onChange={e => this.setState({ up_first: e.target.value })}></input></td>
+            </tr>
+            <tr>
+              <td><label>Upcase Any: </label></td>
+              <td><input type='checkbox' onChange={e => this.setState({ up_any: e.target.value})}></input></td>
+            </tr>
+            <tr>
+              <td><label>Special Character: </label></td>
+              <td><input type='checkbox' onChange={e => this.setState({ spec_char: e.target.value})}></input></td>
+            </tr>
+            <tr>
+              <td><label>Add  Numeric: </label></td>
+              <td><input type='checkbox' onChange={e => this.setState({ add_num: e.target.value})}></input></td>
             </tr>
           </table>
 
