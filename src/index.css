@@ -18,5 +18,10 @@ img.logo {
 
 .PwdGen {
   background-color: dimgrey;
+  height: 100%;
+}
+
+.App {
+  background-color: dimgrey;
   height: 100vh;
 }
