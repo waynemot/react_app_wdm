@@ -31,7 +31,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      tpass: '',
+      tpass: ''
     }
   }
 
@@ -83,10 +83,6 @@ class App extends Component {
                 <td>
                   <StyledInput onChange={e => this.setState({ pw_count: e.target.value })}/>
                 </td>
-              </tr>
-              <tr>
-                <td><label>Upcase First: </label></td>
-                <td><input type='checkbox' onChange={e => this.setState({ up_first: e.target.value })}></input></td>
               </tr>
               <tr>
                 <td><label>Upcase Any: </label></td>

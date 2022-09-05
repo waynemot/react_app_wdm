@@ -19,23 +19,23 @@ class RandPwd extends Component {
 
     }
 
-    build_gen(count = 1, len = 8, upcase = false, num = false, spec = false, upany = false) {
+    build_gen(count = 1, len = 8, num = false, spec = false, upany = false) {
         var pane = App.gen_result;
         var i = 0;
         var pwds = [];
         var pstr;
         while(i < count) {
-            var xpwd = this.gen(len, upcase, num, spec, upany);
+            var xpwd = this.gen(len, num, spec, upany);
+            console.log("xpwd: "+xpwd);
             pwds.push(xpwd);
             pstr = pstr + "<br/>" + xpwd;
             i += 1;
         }
-        return(
-            pstr
-        )
+        console.log("str: "+pstr);
+        return(pstr)
     }
 
-    gen(len = 8, upcase = false, num = false, spec = false, upany = false) {
+    gen(len = 8, num = false, spec = false, upany = false) {
         var consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
         var vowels = ['a', 'e', 'i', 'o', 'u']
         var digits = {'l':1, 'e':3, 'o':0, 'b':6, 't':7, 'g':9, 'c':2, 'h':5, 'r':4, 'd':8};
